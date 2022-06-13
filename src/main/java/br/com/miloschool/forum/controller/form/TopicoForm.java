@@ -1,13 +1,29 @@
 package br.com.miloschool.forum.controller.form;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
+
 import br.com.miloschool.forum.modelo.Curso;
 import br.com.miloschool.forum.modelo.Topico;
 import br.com.miloschool.forum.repository.CursoRepository;
 
 public class TopicoForm {
 
+  @NotNull
+  @NotEmpty
+  @Length(min = 5)
   private String titulo;
+
+  @NotNull
+  @NotEmpty
+  @Length(min = 10)
   private String mensagem;
+
+  @NotNull
+  @NotEmpty
+  @Length(min = 5)
   private String nomeCurso;
 
   public String getTitulo() {
